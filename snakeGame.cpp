@@ -18,12 +18,12 @@ typedef struct _body
 }Body;
 Body body[18][18];
 Body Temp[18][18];
-typedef struct _food
+typedef struct _Heart
 {
     int x;
     int y;
-}Food;
-Food heart;
+}Heart;
+Heart heart;
 int i, j;
 typedef struct _logic
 {
@@ -65,7 +65,7 @@ void BodyToTemp();
 void Delete();
 void Output();
 void Move();
-void FoodOutput();
+void HeartOutput();
 void Eatheart();
 void BodyPlus();
 void Score();
@@ -248,7 +248,7 @@ void Move()
             break;
     }
 }
-void FoodOutput()
+void HeartOutput()
 {
     bool ExitOutLoop = false;
     srand(time(NULL));
@@ -274,7 +274,7 @@ void Eatheart()
     {
         Score();
         BodyPlus();
-        FoodOutput();
+        HeartOutput();
     }
 }
 void BodyPlus()
@@ -374,7 +374,7 @@ int main()
     CursorView(0);
     Init();
     Output();
-    FoodOutput();
+    HeartOutput();
     while (1)
     {
         GameExplain();
